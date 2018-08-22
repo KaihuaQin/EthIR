@@ -284,15 +284,15 @@ def process_instructions(rule):
 
 def write(rules,execution,cname):
     
-    # if "costabs" not in os.listdir("/tmp/"):
-    #     os.mkdir("/tmp/costabs/")
+    # if "costabs" not in os.listdir("."):
+    #     os.mkdir("costabs/")
 
     if execution == None:
-        name = "/tmp/costabs/rbr_saco.rbr"
+        name = "costabs/rbr_saco.rbr"
     elif cname == None:
-        name = "/tmp/costabs/rbr"+str(execution)+"_saco.rbr"
+        name = "costabs/rbr"+str(execution)+"_saco.rbr"
     else:
-        name = "/tmp/costabs/"+cname+"_saco.rbr"
+        name = "costabs/"+cname+"_saco.rbr"
     with open(name,"w") as f:
         for rule in rules:
             f.write(rule+"\n")

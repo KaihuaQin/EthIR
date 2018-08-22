@@ -65,11 +65,11 @@ def has_dependencies_installed():
     return True
 
 def clean_dir():
-    if "costabs" in os.listdir("/tmp/"):
-        for elem in os.listdir("/tmp/costabs/"):
+    if "costabs" in os.listdir("."):
+        for elem in os.listdir("costabs/"):
             last = elem.split(".")[-1]
             if last == "rbr" or last == "cfg" or last == "txt" or last == "config":
-                os.remove("/tmp/costabs/"+elem)
+                os.remove("costabs/"+elem)
 
 
 #Added by Pablo Gordillo 
@@ -170,7 +170,7 @@ def process_name(fname):
     return new_name
 
 def generate_saco_hashes_file(dicc):
-    with open("/tmp/costabs/solidity_functions.txt", "w") as f:
+    with open("costabs/solidity_functions.txt", "w") as f:
         for name in dicc:
             f_names = dicc[name].values()
             cf_names1 = map(process_name,f_names)
@@ -186,7 +186,7 @@ def main():
 
     global rbr_dir
 
-    rbr_dir = "/tmp/costabs/"
+    rbr_dir = "costabs/"
     
     global args
 

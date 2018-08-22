@@ -1235,15 +1235,15 @@ for each smart contract.
 -executions refers to the number of smart contract that has been translated. int.
 '''
 def write_rbr(rbr,executions,cname = None):
-    if "costabs" not in os.listdir("/tmp/"):
-        os.mkdir("/tmp/costabs/")
+    if "costabs" not in os.listdir("."):
+        os.mkdir("costabs/")
 
     if executions == None:
-        name = "/tmp/costabs/rbr.rbr"
+        name = "costabs/rbr.rbr"
     elif cname == None:
-        name = "/tmp/costabs/rbr"+str(executions)+".rbr"
+        name = "costabs/rbr"+str(executions)+".rbr"
     else:
-        name = "/tmp/costabs/"+cname+".rbr"
+        name = "costabs/"+cname+".rbr"
     with open(name,"w") as f:
         for rules in rbr:
             for r in rules:

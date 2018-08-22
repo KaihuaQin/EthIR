@@ -279,14 +279,14 @@ def print_cfg():
 
 def write_cfg(it,name = False):
     vert = sorted(vertices.values(), key = getKey)
-    if "costabs" not in os.listdir("/tmp/"):
-        os.mkdir("/tmp/costabs/")
+    if "costabs" not in os.listdir("."):
+        os.mkdir("costabs/")
     if it == None:
-        name = "/tmp/costabs/cfg_evm.cfg"
+        name = "costabs/cfg_evm.cfg"
     elif name == False:
-        name = "/tmp/costabs/cfg_evm"+str(it)+".cfg"
+        name = "costabs/cfg_evm"+str(it)+".cfg"
     else:
-        name = "/tmp/costabs/cfg_"+name+".cfg"
+        name = "costabs/cfg_"+name+".cfg"
     with open(name,"w") as f:
         for block in vert:
             f.write("================\n")
@@ -2551,13 +2551,13 @@ def component_of_aux(block,visited):
     return visited
             
 def generate_saco_config_file(cname):
-    if "costabs" not in os.listdir("/tmp/"):
-        os.mkdir("/tmp/costabs/")
+    if "costabs" not in os.listdir("."):
+        os.mkdir("costabs/")
         
     if cname == None:
-        name = "/tmp/costabs/config_block.config"
+        name = "costabs/config_block.config"
     else:
-        name = "/tmp/costabs/"+cname+".config"
+        name = "costabs/"+cname+".config"
     with open(name,"w") as f:
         elems = map(lambda (x,y): "("+str(x)+";"+str(y)+")", function_block_map.items())
         elems2write = "\n".join(elems)
